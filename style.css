@@ -12,6 +12,12 @@ body{
     color: aliceblue;
 }
 
+a{
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+
 .navbar{
     display: flex;
     justify-content: space-around;
