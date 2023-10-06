@@ -311,3 +311,37 @@ ul{
     width: 100%;
     height: auto;
 }
+.header-about {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 20px;
+    color: #333;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+
+.about-content {
+    display: flex;
+    margin: 20px 60px;
+}
+
+.about-text {
+    flex: 60%;
+    margin-right: 30px;
+}
+
+.about-text h1, .about-text p {
+    margin: 20px 0;
+}
+
+.about-img {
+    flex: 40%;
+    text-align: right;
+}
+
+.about-img img {
+    width: 100%;
+    position: sticky;
+    top: 0;
+}
