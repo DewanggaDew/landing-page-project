@@ -1,33 +1,43 @@
-let slideIndex = 0;
+document.addEventListener("DOMContentLoaded", function () {
+  const carouselSlide = document.querySelector(".carousel-slide");
+  const carouselImages = document.querySelectorAll(".carousel-slide img");
 
-const showSlides = () => {
-  const slides = document.getElementsByClassName("mySlides");
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
+  // Buttons
+  const prevBtn = document.querySelector(".carousel-btn-left");
+  const nextBtn = document.querySelector(".carousel-btn-right");
 
-  slideIndex++;
-  if (slideIndex > slides.length) {
-    slideIndex = 1;
-  }
-  slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 4000); // Change every 4 seconds
-};
+  // Counter
+  let counter = 1;
+  const size = carouselImages[0].clientWidth;
 
-showSlides();
+  carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
 
-const plusSlides = (n) => {
-  showSlides((slideIndex += n));
-};
+  // Button Listeners
 
-const currentSlide = (n) => {
-  showSlides((slideIndex = n));
-};
+  nextBtn.addEventListener("click", () => {
+    if (counter >= carouselImages.length - 1) return;
+    carouselSlide.style.transition = "transform 0.4s ease-in-out";
+    counter++;
+    carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
+  });
 
-document.querySelector(".prev").addEventListener("click", function () {
-  plusSlides(-1);
-});
+  prevBtn.addEventListener("click", () => {
+    if (counter <= 0) return;
+    carouselSlide.style.transition = "transform 0.4s ease-in-out";
+    counter--;
+    carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
+  });
 
-document.querySelector(".next").addEventListener("click", function () {
-  plusSlides(1);
+  carouselSlide.addEventListener("transitionend", () => {
+    if (carouselImages[counter].id === "lastClone") {
+      carouselSlide.style.transition = "none";
+      counter = carouselImages.length - 2;
+      carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
+    }
+    if (carouselImages[counter].id === "firstClone") {
+      carouselSlide.style.transition = "none";
+      counter = carouselImages.length - counter;
+      carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
+    }
+  });
 });
