@@ -5,7 +5,6 @@ body{
     margin: 0;
     padding: 0;
     flex: 1;
-    min-height: 100vh;
 }
 
 .header{
@@ -29,38 +28,6 @@ a{
 
 .text p{
     font-size: 18px;
-}
-
-.middle-content{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-right: auto;
-    margin-left: auto;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.boxes .text{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.info{
-    justify-content: space-around;
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 200px;
-    text-align: center;
-    gap: 20px;
-  }
-
-.boxes img{
-    width: 150px;
-    height: 150px;
-    display: flex;
 }
 
 .middle-content .heading{
@@ -102,26 +69,33 @@ a{
     display: flex;
     background-color: #1F2937;
     color: aliceblue;
-    flex-shrink: 0;
     align-items: center;
+    min-width: 100%;
 }
 
 .top-content{
-    justify-content: space-between;
     display: flex;
-    padding: 16px;
-    padding-bottom: 100px;
+    justify-content: center;
     align-items: center;
-    width: 1200px;
-    margin-right: auto;
-    margin-left:auto;
+    min-width: 100%;
+}
+
+.top-content img {
+    max-width: 100%; /* Set the maximum width to 100% for responsiveness */
+    height: auto; /* Automatically adjust the height to maintain aspect ratio */
+
+  }
+
+.image{
+    margin: auto;
 }
 
 .text{
-    width: 500px;
+    width: 30em;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    margin: auto;
 }
 
 
@@ -164,23 +138,22 @@ ul{
     justify-content: flex-end;
 }
 
-.CTA-background{
+.CTA{
     display: flex;
     justify-items: center;
     align-items: center;
     flex-direction: column;
 }
 
-.CTA{
+.CTA-background{
     display: flex;
     background-color: #3882F6;
-    width: 1200px;
-    height: 150px;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    width: 60%;
+    min-height: 10em;
+    margin: 5em auto;
     border-radius: 12px;
-    justify-content: space-around;
     align-items: center;
+    justify-content: center;
 }
 
 .CTA .heading{
@@ -191,6 +164,7 @@ ul{
 
 .CTA .text{
     color: white;
+    margin: 0 0;
 }
 
 .CTA button{
@@ -203,6 +177,7 @@ ul{
     border-color: white;
     border-radius: 7px;
     border-style: solid;
+    margin: 0 auto;
 }
 
 .footer{
@@ -377,14 +352,14 @@ ul{
 }
 
 .header-about {
-    font-size: 36px;
+    font-size: 16px;
 }
 
 .full-middle{
     position: relative;
     height: 600px;
     width: 80%;
-    margin:0 auto;
+    margin:15px auto;
     background-color: black;
 }
 
